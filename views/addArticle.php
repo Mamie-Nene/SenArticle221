@@ -9,24 +9,30 @@
     <body>
         <h1> Formulaire d'ajout d'un article </h1>
         <form action="../models/addArticle.php" method="post">
-            <label for="titre"> Titre de l'article </label> :
-            <input type="text" name="titre" id="titre"/> </br>
-            <label for="contenu"> Contenu </label> :
-            <textarea name="contenu" id="contenu">  </textarea> </br>
-            <label for="dateCreation"> date de creation </label> :
-            <input type="date" name="dateCreation" id="dateCreation"> </br>
-            <label for="dateModif"> date de modification </label> : 
-            <input type="date" name="dateModif" id="dateModif"> </br>
-            <label for="categorie"> catégorie </label>
-            <select>
-                <option> 
-                    <?php 
-                        $categories = getAllCategory();
-                        echo $categories[' libelle '] ;
-                    ?> 
-                </option>
-            </select> </br>
-            <button type="submit" value="valider">
+            <div class="input-group">
+                <label for="titre"> Titre de l'article </label> 
+                <input type="text" name="titre" id="titre"/> 
+            </div>
+            <div class="input-group">
+                <label for="contenu"> Contenu </label> 
+                <textarea name="contenu" id="contenu">  </textarea> 
+            </div>
+            <div class="input-group">
+                <label for="dateCreation"> date de creation </label> 
+                <input type="date" name="dateCreation" id="dateCreation"> 
+            </div>
+            <div class="input-group">
+                <label for="dateModif"> date de modification </label> 
+                <input type="date" name="dateModif" id="dateModif"> 
+            </div>
+            <div class="input-group">
+                <label for="categorie"> catégorie </label>
+                <input type="categorie" name="categorie" id="categorie">
+           </div>
+            <div class="input-group">
+                <button type="submit" value="valider">VALIDER </button>
+                <a href="indexEditeurs.php"> <button class="btn"> Annuler </button> </a>
+            </div>
         </form>
     </body>
 </html>
