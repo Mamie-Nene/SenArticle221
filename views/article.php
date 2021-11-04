@@ -37,17 +37,16 @@
             <h2>Catégories</h2>
             <ul>  
             <?php 
-            $categories = getAllCategory();
-            foreach ($categories as $categorie)
-            {
+                $categories = getAllCategory();
+                foreach ($categories as $categorie)
+                {
             ?> 
                 <li><a href="<?= $categorie['id'] ?> " id="category"><?=$categorie['libelle'] ?> </a> </li>
-                        <?php 
-                            } 
-                        ?> 
-                    </ul>     
-                </div> 
-        <?php 
-        }
-    
+            <?php 
+                } 
+            ?> 
+            </ul>     
+        </div> 
+    <?php 
+    }
 ?>
