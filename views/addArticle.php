@@ -27,7 +27,7 @@
             </div>
             <div class="input-group">
                 <label for="categorie"> catégorie </label>
-                <input type="categorie" name="categorie" id="categorie">
+                <input type="number" name="categorie" id="categorie">
            </div>
             <div class="input-group">
                 <button type="submit" value="valider">VALIDER </button>
