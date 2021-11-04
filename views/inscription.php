@@ -2,33 +2,35 @@
 <html>
     <head>
         <title> Formulaire d'inscription</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../style.css">
     </head>
     <body>
         <form action="../models/inscription.php" method="POST">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-sm-3">
-                        <br>
-                        <h2 class="text-center"> Formulaire d'inscription </h2>
-                        <hr>
-                        <label for="nom"> <strong> NOM </strong></label>
-                        <input class="form-control" type="text" id="nom" name="nom"/>
-
-                        <label for="uname"> username </label>
-                        <input class="form-control" type="text" id=" uname" name="uname"/> 
-                        <label for="mdp"> Mot de passe </label>
-                        <input class="form-control" type="password" id=" mdp" name="mdp" /> 
-                        <label for="confmdp"> Confirmation du Mot de passe </label>
-                        <input class="form-control" type="password" id=" confmdp" name="confmdp" />
-            
-                        <label for="mail"> Email </label>
-                        <input class="form-control" type="text" id=" mail" name="mail"/> 
-                
-                        <button class="form-control" type="submit" name="valider"> Valider </button>
-                        <a href="../index.php"><button type="button" name="annuler"> Annuler </button></a>
-                    </div>
-                </div> 
+            <div class="input-group">
+                <h2 class="text-center"> Formulaire d'inscription </h2>
+                <hr>
+                <label for="nom"> <strong> NOM </strong></label>
+                <input type="text" id="nom" name="nom"/>
+            </div>
+            <div class="input-group">
+                <label for="uname"> username </label>
+                <input type="text" id=" uname" name="uname"/> 
+            </div>
+            <div class="input-group">           
+                <label for="mdp"> Mot de passe </label>
+                <input type="password" id=" mdp" name="mdp" /> 
+            </div>
+            <div class="input-group">
+                <label for="confmdp"> Confirmation du Mot de passe </label>
+                <input type="password" id=" confmdp" name="confmdp" />
+            </div>
+            <div class="input-group">
+                <label for="mail"> Email </label>
+                <input type="text" id=" mail" name="mail"/> 
+            </div>
+            <div class="input-group">
+                <button class="btn" type="submit" name="valider"> Valider </button>
+                <a href="../index.php"><button class="btn" type="button" name="annuler"> Annuler </button></a>
             </div>
         </form> 
     </body>    
