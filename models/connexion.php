@@ -14,7 +14,7 @@
         { 
             //$username = $_POST['uname'];
             //$password = $_POST['mdp'];
-            $connexion =mysqli_connect("127.0.0.1", "221shadow", "772972920lodye", "mglsi_news") ;
+            $connexion =mysqli_connect("127.0.0.1", "221shadow", "password", "mglsi_news") ;
              //mysqli_connect("localhost", "root", "passer123", "mglsi_news");
             //on sécurise les données entrées
             $username=stripcslashes($_REQUEST['uname']);
