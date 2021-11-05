@@ -15,7 +15,6 @@
         <h2 class="text-center"> Bienvenue à SenArticle221 </h2>
         <div>        
             <?php 
-if(!$_SESSION['username'])header("Location: ../index.php");
                 
                 $articles = Article::getAllArticle();
                     foreach ($articles as $article)
