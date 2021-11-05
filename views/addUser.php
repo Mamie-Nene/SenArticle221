@@ -1,6 +1,3 @@
-<?php
-    require '../models/mesFonctionsSql.php';
-?> 
 <!DOCTYPE HTML>
 <html lang=fr>
     <head>
@@ -32,7 +29,7 @@
             </div>
             <div class="input-group">
                 <button class="btn" type="submit" value="valider">Valider </button>
-                <a href="/indexAdmin.php"> <button class="btn"> Annuler </button> </a>
+                <a href="/indexAdmin.php"> <button class="btn" type="button"> Annuler </button> </a>
             </div>
         </form>
     </body>
