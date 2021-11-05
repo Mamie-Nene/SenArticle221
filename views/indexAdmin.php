@@ -1,4 +1,6 @@
 <?php
+        session_start();    
+        var_dump($_SESSION['username']);    
         require_once "../models/databaseConnexion.php";
         require '../controllers/ControllerAdmin.php';  
         $controller = new ControllerAdmin();

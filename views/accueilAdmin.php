@@ -87,6 +87,7 @@
             <h2>Catégories</h2>
             <ul>  
             <?php 
+
                
                 $categories = Categorie::getAllCategory();
                 foreach ($categories as $categorie)

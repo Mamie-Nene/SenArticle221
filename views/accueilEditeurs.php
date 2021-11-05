@@ -61,6 +61,7 @@
         </aside>
         <div>        
             <?php 
+
                 
                 $articles = Article::getAllArticle();
                     foreach ($articles as $article)

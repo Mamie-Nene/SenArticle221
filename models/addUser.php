@@ -1,4 +1,5 @@
 <?php
+
     if(isset($_POST['valider']))
     {      
         if((empty($_POST['nom'])) or (empty($_POST['uname'])) or (empty($_POST['motDepass'])) or (empty($_POST['mail'])))

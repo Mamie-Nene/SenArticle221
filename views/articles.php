@@ -1,4 +1,6 @@
+
 <?php
+
 function parCategorie($var)
             {
         ?>
