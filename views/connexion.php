@@ -25,7 +25,7 @@
         <div class="input-group">
             <button class="btn" type="submit" name="connexion"> Connexion </button>
 
-             <button class="btn" type="button" name="inscription"> <a href="inscription.php"> Inscription </a> </button>
+             <a href="inscription.php"><button class="btn" type="button" name="inscription">  Inscription  </button></a>
         </div>
     </form>
 </body>
