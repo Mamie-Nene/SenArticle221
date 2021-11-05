@@ -7,8 +7,8 @@
         <title> </title> 
     </head>
     <body>
-        <h1> Formulaire d'ajout d'un article </h1>
         <form action="../models/addArticle.php" method="post">
+            <h2> Formulaire d'ajout d'un article </h2>
             <div class="input-group">
                 <label for="titre"> Titre de l'article </label> 
                 <input type="text" name="titre" id="titre"/> 
@@ -31,7 +31,7 @@
            </div>
             <div class="input-group">
                 <button type="submit" value="valider">VALIDER </button>
-                <a href="indexEditeurs.php"> <button class="btn"> Annuler </button> </a>
+                <a href="indexEditeurs.php"> <button class="btn" type="button"> Annuler </button> </a>
             </div>
         </form>
     </body>
