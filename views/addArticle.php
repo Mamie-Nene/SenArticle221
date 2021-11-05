@@ -1,6 +1,3 @@
-<?php
-    require '../models/mesFonctionsSql.php';
-?> 
 <!DOCTYPE HTML>
 <html lang=fr>
     <head>
