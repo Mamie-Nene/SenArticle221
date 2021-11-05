@@ -1,22 +1,21 @@
 <?php
-    require_once 'models/mesFonctionsSql.php';
+    require_once 'models/Article.php';
+    require_once 'models/Categorie.php';
     class Controller{
         function __construct()
         {
         }
-        public function showAccueil(){
-            ?>
-            <?php
-            require 'views/article.php';
-            afficherArticle();
-             afficherCategorie();
+        public function showAccueil()
+        {
+            require 'views/accueil.php';
+    
         }
-        public function showArticles(){
-            $articles = getAllArticle();
-            //$id=$articles['id'];
-            readArticle($articles);
+        public function showArticles()
+        {
+            Article::getArticleById($id);
         }
-        public function showCategories(){
+        public function showCategories()
+        {
             $id=$categories['id'];
             readArticle($id);
         }
