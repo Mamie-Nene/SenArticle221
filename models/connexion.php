@@ -49,6 +49,8 @@
 
                 //on ouvre la session
                 $_SESSION['username']=mysqli_fetch_array($requete)['nom'];
+                $groupe=mysqli_fetch_array($requete)['groupe'];
+                if(
                 //echo " bienvenue , $uname"  ;
                 header("Location: ../views/indexAdmin.php");
                 exit;
