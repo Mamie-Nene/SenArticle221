@@ -2,6 +2,7 @@
 <html lang=fr>
     <head>
         <title> </title> 
+        <link rel="stylesheet" type="text/css" href="../style.css">
     </head>
     <body>
         <form action="../models/addArticle.php" method="post">
