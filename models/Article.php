@@ -19,6 +19,36 @@
         $rows =$donnees->fetchAll();
         return $rows;
     }
+    public static function getLimitArticle(){
+        //on recupere la connexion à la bd
+        $connexion=databaseConnexion::getDatabaseConnexion();
+        //on met la requete oour récuperer tous les articles 
+        $requete='SELECT * FROM Article ORDER BY id DESC LIMIT 5';
+        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
+        $donnees =$connexion->query($requete);
+        $rows =$donnees->fetchAll();
+        return $rows;
+    }
+     public static function paginationNext(){
+        //on recupere la connexion à la bd
+        $connexion=databaseConnexion::getDatabaseConnexion();
+        //on met la requete oour récuperer tous les articles 
+        $requete='SELECT * FROM Article ORDER BY id ';
+        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
+        $donnees =$connexion->query($requete);
+        $rows =$donnees->fetchAll();
+        return $rows;
+    }
+    public static function paginationPrevious(){
+        //on recupere la connexion à la bd
+        $connexion=databaseConnexion::getDatabaseConnexion();
+        //on met la requete oour récuperer tous les articles 
+        $requete='SELECT * FROM Article ORDER BY id ';
+        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
+        $donnees =$connexion->query($requete);
+        $rows =$donnees->fetchAll();
+        return $rows;
+    }
     public static function getArticleById($id){
         //on recupere la connexion à la bd
         $connexion=databaseConnexion::getDatabaseConnexion();
@@ -37,17 +67,8 @@
         $rows =$donnees->fetchAll();
         return $rows;
     }
-    public function afficherArticle()
-    {
-        $articles = getAllArticle();
-        foreach ($articles as $article)
-        {
-            //LE $PHP AVEC ECHO PEUT ETRE REMPLACER PAR <?=
-            ?>                                
-            <h2> <a href="index.php?action=articles&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
-            <p> <?= $article['contenu'];
-        } 
-}
+  
+
     function createArticle($titre, $contenu, $dateCreation, $dateModification, $categorie)
     { //si on met des donnes erronnees
        try {
