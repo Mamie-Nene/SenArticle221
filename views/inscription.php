@@ -2,12 +2,12 @@
 <html>
     <head>
         <title> Formulaire d'inscription</title>
-        <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../asset/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="../asset/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/style-responsive.css" rel="stylesheet">
+  <link href="../asset/css/style.css" rel="stylesheet">
+  <link href="../asset/css/style-responsive.css" rel="stylesheet">
     </head>
     <body> 
         <div class="row mt">
@@ -53,14 +53,5 @@
                 </div>
             
         </div>
-
-        <script src="lib/jquery/jquery.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="lib/jquery.backstretch.min.js"></script>
-        <script>
-            $.backstretch("../login-bg.jpg", {
-            speed: 500
-            });
-        </script>
     </body>    
 </html>
