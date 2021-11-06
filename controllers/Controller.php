@@ -1,4 +1,5 @@
 <?php
+    require_once "models/databaseConnexion.php";
     require_once 'models/Article.php';
     require_once 'models/Categorie.php';
     class Controller{
@@ -7,17 +8,25 @@
         }
         public function showAccueil()
         {
+            $articles = Article::getLimitArticle();
+            $categories= Categorie::getAllCategory();
             require 'views/accueil.php';
-    
         }
-        public function showArticles()
+        public function showPagination()
         {
-            Article::getArticleById($id);
+            $articles = Article::paginationNext();
+            $categories= Categorie::getAllCategory();
+            require 'views/pagination.php';
+        }
+        public function showArticles($id)
+        {
+            $articles=Article::getArticleById($id);
+            require 'views/accueil.php';
         }
         public function showCategories()
         {
-            $id=$categories['id'];
-            readArticle($id);
+            $categories=Categorie::getArticleByCategorie($id);
+            require 'views/accueil.php';
         }
 
     }
