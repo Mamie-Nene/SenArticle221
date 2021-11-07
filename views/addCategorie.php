@@ -2,7 +2,7 @@
 <html lang=fr>
     <head>
         <title> </title> 
-        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="../asset/style.css">
     </head>
     <body>
         <h1> Formulaire d'ajout d'une catégorie </h1>

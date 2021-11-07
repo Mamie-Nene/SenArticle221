@@ -5,7 +5,7 @@ if(isset($_POST['modifier'])){
             echo 'veuillez remplir tous les champs ';
         }
         else{
-            $connexion =mysqli_connect("127.0.0.1", "root", "passer123", "mglsi_news") ;
+            $connexion =mysqli_connect("127.0.0.1", "221shadow", "772972920lodye", "mglsi_news") ;
             //$connexion=databaseConnexion::getDatabaseConnexion();
             $titre= $_POST['titre'];
             $contenu= $_POST['contenu'];

@@ -16,14 +16,8 @@ require_once("api_call.php");
     }
     public static function getLimitArticle(){
         $articles = CallAPI("GET","localhost:8000/articles"); 
-        return $articles[0];
-    }
-<<<<<<< HEAD
-     public static function paginationNext(){
-        $articles = CallAPI("GET","localhost:8000/articles")[$GLOBALS['limit']];
-        $GLOBALS['limit'] = $GLOBALS['limit']+1;
         return $articles;
-=======
+    }
      public static function ArticleById($id){
         //on recupere la connexion à la bd
         $connexion=databaseConnexion::getDatabaseConnexion();
@@ -41,7 +35,6 @@ require_once("api_call.php");
        //affiche en ligne (rows) et stockage du resultat dans un tableau associatif
         $rows =$donnees->fetchAll();
         return $rows;
->>>>>>> 160bf2769095ce7ac8121150bdbe4a2d29966012
     }
   
      public static function paginationNext(){
@@ -112,5 +105,4 @@ require_once("api_call.php");
     }
 
 }
-
 ?>

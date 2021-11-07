@@ -36,13 +36,11 @@
                     $controller->showGestionArticle();
             }
             elseif(strtolower($_GET['action'])==='editarticle')
-            {   
-                if(isset($_GET['id']))
-                {
+            {  
+                if(isset($_GET['id'])){
                     $controller->showEditArticle($_GET['id']);
                 }
-                else
-                {
+                else{
                     echo'Erreur';
                 }
             }
