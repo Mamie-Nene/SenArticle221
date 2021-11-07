@@ -1,5 +1,4 @@
 <?php
-//require_once "models/databaseConnexion.php";
 
 class Categorie
 {
@@ -25,19 +24,6 @@ class Categorie
                 catch(Exception $e){
                 die('Erreur $:' .$e->getMessage());
                 }
-        }
-    
-    public static function readCategory($id)
-        {
-            $connexion=getDatabaseConnexion();
-            $requete="SELECT * FROM Categorie where id='$id'";
-            $donnees =$connexion->query($requete);
-        //affiche en ligne (rows) et stockage du resultat dans un tableau associatif
-            $rows =$donnees->fetchAll();
-            if (!empty ($rows))
-            {
-                return $rows[0];
-            }
         }
     
     public static function updateCategory($id, $libelle){
