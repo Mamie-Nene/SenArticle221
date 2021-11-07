@@ -1,5 +1,6 @@
 <?php
-    
+require_once("api_call.php");
+    $limit = 1;
     class Article
 {
     public $id;
@@ -10,34 +11,17 @@
     public $dateModif;
     
     public static function getAllArticle(){
-        //on recupere la connexion à la bd
-        $connexion=databaseConnexion::getDatabaseConnexion();
-        //on met la requete oour récuperer tous les articles 
-        $requete='SELECT * FROM Article ORDER BY id DESC';
-        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
-        $donnees =$connexion->query($requete);
-        $rows =$donnees->fetchAll();
-        return $rows;
+        $articles = CallAPI("GET","localhost:8000/articles");
+        return $articles;
     }
     public static function getLimitArticle(){
-        //on recupere la connexion à la bd
-        $connexion=databaseConnexion::getDatabaseConnexion();
-        //on met la requete oour récuperer tous les articles 
-        $requete='SELECT * FROM Article ORDER BY id DESC LIMIT 5';
-        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
-        $donnees =$connexion->query($requete);
-        $rows =$donnees->fetchAll();
-        return $rows;
+        $articles = CallAPI("GET","localhost:8000/articles"); 
+        return $articles[0];
     }
      public static function paginationNext(){
-        //on recupere la connexion à la bd
-        $connexion=databaseConnexion::getDatabaseConnexion();
-        //on met la requete oour récuperer tous les articles 
-        $requete='SELECT * FROM Article ORDER BY id ';
-        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
-        $donnees =$connexion->query($requete);
-        $rows =$donnees->fetchAll();
-        return $rows;
+        $articles = CallAPI("GET","localhost:8000/articles")[$GLOBALS['limit']];
+        $GLOBALS['limit'] = $GLOBALS['limit']+1;
+        return $articles;
     }
     public static function paginationPrevious(){
         //on recupere la connexion à la bd
@@ -122,6 +106,7 @@
             die('Erreur $:' .$e->getMessage());
            }
     }
+
 }
 
 ?>

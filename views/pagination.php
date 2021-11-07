@@ -1,4 +1,5 @@
-<?session_start()?>
+<?php session_start()
+?>
 <!DOCTYPE html>
 <html lang="FR">
     <head>
@@ -6,7 +7,7 @@
         <!--external css-->
         <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
         <!-- Custom styles for this template -->
-        <link href="../css/style.css" rel="stylesheet">
+        <link href="../asset/css/style.css" rel="stylesheet">
         <link href="../css/style-responsive.css" rel="stylesheet">
     </head>
     <body>
@@ -32,24 +33,21 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-9 main-chart">        
-                        <?php 
-                        if(!empty($articles))
-                        {
-                            foreach ($articles as $articles)
-                            {
-                                    //LE $PHP AVEC ECHO PEUT ETRE REMPLACER PAR <?=
-                            ?>                                
-                                <h2> <a href="index.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
-                                <p> <?= $article['contenu'];
-                            } 
-                        }
-                        ?> 
-                             <div class="pagination">
-                            <a href="pagination.php"> <button type="button"> Suivant </button></a>
-                            <a href="pagination.php"> <button type="button"> Precedent </button></a>    
-                            
-                        </div>
-                            
+                            <?php 
+                            if(!empty($articles)){
+
+                                foreach ($articles as $articles){
+                                ?>                                
+                                    <h2> <a href="index.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
+                                    <p> <?= $article['contenu'];
+                                } 
+                            }
+                            ?> 
+                                <div class="pagination">
+                                    <a href="pagination"> <button type="button"> Suivant </button></a>
+                                    <a href="pagination"> <button type="button"> Precedent </button></a>    
+                                </div>
+                                
                         </div>
                        
                         <div class="col-lg-3 ds">
@@ -79,7 +77,7 @@
         <script class="include" type="text/javascript" src="../lib/jquery.dcjqaccordion.2.7.js"></script>
         <script src="../lib/jquery.scrollTo.min.js"></script>
         <!--common script for all pages-->
-        <script src="../lib/common-scripts.js"></script>
+        <script src="../assets/lib/common-scripts.js"></script>
     </body>
 </html>
     

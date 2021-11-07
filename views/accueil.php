@@ -1,4 +1,5 @@
-<?session_start()?>
+<?session_start()
+?>
 <!DOCTYPE html>
 <html lang="FR">
     <head>
@@ -33,6 +34,7 @@
                     <div class="row">
                         <div class="col-lg-9 main-chart">        
                         <?php 
+                        
                         if(!empty($articles))
                         {
                             foreach ($articles as $article)

@@ -6,7 +6,7 @@
         //connexion à la bd
             try 
             {   
-                 $db= new PDO('mysql:host=127.0.0.1;dbname=mglsi_news;charset=utf8','root','passer123');
+                 $db= new PDO('mysql:host=127.0.0.1;dbname=mglsi_news;charset=utf8','221shadow','772972920lodye');
                  //dsn:url de notre base
             }
             catch (Exception $e){

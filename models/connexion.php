@@ -1,4 +1,6 @@
-<?php 
+<?php
+ require_once("databaseConnexion.php");
+
     // pour maintenir $_SESSION
     //require('mesFonctionsSql.php');
 
@@ -14,13 +16,14 @@
         { 
             //$username = $_POST['uname'];
             //$password = $_POST['mdp'];
-            $connexion =mysqli_connect("127.0.0.1", "root", "passer123", "mglsi_news") ;
+            $connexion = mysqli_connect("localhost","221shadow","772972920lodye","mglsi_news");
              //mysqli_connect("localhost", "root", "passer123", "mglsi_news");
             //on sécurise les données entrées
             $username=stripcslashes($_REQUEST['uname']);
             $password =stripcslashes($_REQUEST['mdp']);
             $username= mysqli_real_escape_string($connexion,$username);
             $password= mysqli_real_escape_string($connexion, $password);
+            $_SESSION['limit'] = 0;
             
             //hachage du mot de passe 
             //$pass_hache=password_hash($_POST['password'], PASSWORD_DEFAULT);
