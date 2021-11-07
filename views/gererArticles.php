@@ -92,7 +92,7 @@
                                     <td> <?= $article['dateModification'] ?> </td>
                                     <td> <?= $article['categorie'] ?> </td>
                                     <td> <?= $article['editeur'] ?> </td>
-                                    <td> <a class="btn" href="editArticle.php?id=<?=$article['id']?>"> Modifier </a> 
+                                    <td> <a class="btn" href="indexAdmin.php?action=editArticle&id=<?=$article['id']?>"> Modifier </a> 
                                     <a href="deleteArticle.php?id=<?$article['id']?>">Supprimer </a> </td>
                                 </tr>
                             <?php
