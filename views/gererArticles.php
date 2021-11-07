@@ -30,7 +30,7 @@
                 <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
                         <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-                        <h5 class="centered">Mame Néné</h5>
+                        <h4 class="centered">Mame Néné</h4>
                         <li class="mt">
                             <a href="indexAdmin.php">
                             <i class="fa fa-dashboard"></i>
@@ -38,19 +38,19 @@
                             </a>
                         </li>
                         <li class="sub">
-                            <a  class="active" href="indexAdmin.php?action=gererarticles">
+                            <a  class="active" href="indexAdmin.php?action=gererArticles">
                             <i class="fa fa-dashboard"></i>
                             <span>Gestion Articles</span>                                
                             </a>
                         </li>
                         <li class="sub">
-                            <a  href="indexAdmin.php?action=gerercategories">
+                            <a  href="indexAdmin.php?action=gererCategories">
                             <i class="fa fa-dashboard"></i>
                             <span>Gestion Categories</span>                                
                             </a>
                         </li>
                         <li class="sub">
-                            <a  href="indexAdmin.php?action=gererusers">
+                            <a  href="indexAdmin.php?action=gererUsers">
                             <i class="fa fa-user"></i>
                             <span>Gestion Utilisateurs</span>                                
                             </a>
@@ -85,15 +85,15 @@
                             {
                                 foreach ($articles as $article) 
                                 {
-                        ?>      <tr>
-                                    <td> <?= $article['titre'] ?> </td>
-                                    <td> <?= $article['contenu'] ?> </td>
+                        ?>      <tr class="lien">
+                                    <td > <?= $article['titre'] ?> </td>
+                                    <td  > <?= $article['contenu'] ?> </td>
                                     <td> <?= $article['dateCreation'] ?> </td>
                                     <td> <?= $article['dateModification'] ?> </td>
-                                    <td> <?= $article['categorie'] ?> </td>
-                                    <td> <?= $article['editeur'] ?> </td>
-                                    <td> <a class="btn" href="indexAdmin.php?action=editArticle&id=<?=$article['id']?>"> Modifier </a> 
-                                    <a href="deleteArticle.php?id=<?$article['id']?>">Supprimer </a> </td>
+                                    <td > <?= $article['categorie'] ?> </td>
+                                    <td > <?= $article['editeur'] ?> </td>
+                                    <td > <a class="btn btn-theme" href="indexAdmin.php?action=editArticle&id=<?=$article['id']?>"> Modifier </a> 
+                                    <a class="btn btn-theme04" href="indexAdmin.php?action=deleteArticle&id=<?$article['id']?>">Supprimer </a> </td>
                                 </tr>
                             <?php
                                 }
