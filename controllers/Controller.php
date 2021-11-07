@@ -12,22 +12,25 @@
             $categories= Categorie::getAllCategory();
             require 'views/accueil.php';
         }
+        public function showArticles($id)
+        {
+            $article=Article::ArticleById($id);
+            $categories= Categorie::getAllCategory();
+            require 'views/article.php';
+        }
+        public function showCategories($id)
+        {
+            $articles=Article::categoryArticle($id);
+            $categories=Categorie::getAllCategory();
+            require 'views/categorie.php';
+        }
         public function showPagination()
         {
             $articles = Article::paginationNext();
             $categories= Categorie::getAllCategory();
             require 'views/pagination.php';
         }
-        public function showArticles($id)
-        {
-            $articles=Article::getArticleById($id);
-            require 'views/accueil.php';
-        }
-        public function showCategories()
-        {
-            $categories=Categorie::getArticleByCategorie($id);
-            require 'views/accueil.php';
-        }
+        
 
     }
 ?>
