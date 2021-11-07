@@ -35,6 +35,12 @@
             require '../views/editArticle.php';
             
         }
+        public function showDeleteArticle($id){
+            
+            $article=Article::ArticleById($id);
+            require '../views/deleteArticle.php';
+            
+        }
         public function showGestionCategorie(){
             $categories=Categorie::getAllCategory();
             require '../views/gererCategories.php';
