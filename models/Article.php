@@ -57,52 +57,6 @@ require_once("api_call.php");
         $rows =$donnees->fetchAll();
         return $rows;
     }
-   
-    
-
-    function createArticle($titre, $contenu, $dateCreation, $dateModification, $categorie)
-    { //si on met des donnes erronnees
-       try {
-        $connexion=getDatabaseConnexion();
-        $requete="INSERT INTO Article (titre, contenu, dateCreation, dateModification, categorie)
-                 VALUES ('$titre','$contenu','$dateCreation','$dateModification','$categorie')";
-        $connexion ->exec($requete);
-       }
-       catch(Exception $e){
-        die('Erreur $:' .$e->getMessage());
-       }
-    }
-      function updateArticle($id, $titre, $contenu, $dateCreation, $dateModification, $categorie){
-        //on use id car il faut savoir quelle article mettre a jour
-        try {
-            $connexion=getDatabaseConnexion();
-            //on met la requete oour récuperer tous les articles 
-            $requete="UPDATE Article set 
-                     titre='$titre', 
-                     contenu='$contenu', 
-                     dateCreation='$dateCreation', 
-                     dateModification='$dateModification', 
-                     categorie='$categorie' 
-                     where id='$id' ";
-            $donnees =$connexion->query($requete);
-           }  
-           catch(Exception $e){
-            die('Erreur $:' .$e->getMessage());
-           }
-
-    }
-    function deleteArticle($id){
-        try {
-            $connexion=getDatabaseConnexion();
-            //on met la requete oour récuperer tous les articles 
-            $requete="DELETE FROM Article where id='$id' ";
-                     
-            $donnees =$connexion->query($requete);
-           }  
-           catch(Exception $e){
-            die('Erreur $:' .$e->getMessage());
-           }
-    }
 
 }
 ?>
