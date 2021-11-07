@@ -29,6 +29,12 @@
             $articles=Article::getAllArticle();
             require '../views/gererArticles.php';
         }
+         public function showEditArticle($id){
+            
+            $article=Article::ArticleById($id);
+            require '../views/editArticle.php';
+            
+        }
         public function showGestionCategorie(){
             $categories=Categorie::getAllCategory();
             require '../views/gererCategories.php';
