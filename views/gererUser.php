@@ -30,7 +30,7 @@
                 <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
                         <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-                        <h5 class="centered">Mame Néné</h5>
+                        <h4 class="centered">Mame Néné</h4>
                         <li class="mt">
                             <a href="indexAdmin.php">
                             <i class="fa fa-dashboard"></i>
@@ -85,14 +85,14 @@
                                 foreach ($users as $user) 
                                 {
                         ?>      
-                                    <tr>
+                                    <tr class="lien">
                                         <td> <?= $user['nom'] ?> </td>
                                         <td> <?= $user['username'] ?> </td>
                                         <td> <?= $user['motDePasse'] ?> </td>
                                         <td> <?= $user['mail'] ?> </td>
                                         <td> <?= $user['userRole'] ?> </td>
-                                        <td> <a class="btn" href="editUser.php?id=<?=$user['id']?>"> Modifier </a> 
-                                        <a class="btn" href="deleteUser.php?id=<?$user['id']?>">Supprimer </a> </td>
+                                        <td> <a class="btn btn-theme" href="editUser.php?id=<?=$user['id']?>"> Modifier </a> 
+                                        <a class="btn btn-theme04" href="deleteUser.php?id=<?$user['id']?>">Supprimer </a> </td>
                                 </tr>
                             <?php
                                 }
