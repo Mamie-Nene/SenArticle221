@@ -35,6 +35,17 @@
             {   
                     $controller->showGestionArticle();
             }
+            elseif(strtolower($_GET['action'])==='editarticle')
+            {   
+                if(isset($_GET['id']))
+                {
+                    $controller->showEditArticle($_GET['id']);
+                }
+                else
+                {
+                    echo'Erreur';
+                }
+            }
             elseif(strtolower($_GET['action'])==='gerercategories')
             {   
                     $controller->showGestionCategorie();
