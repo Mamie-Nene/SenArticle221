@@ -41,8 +41,11 @@
                 $_SESSION['username']=$user['username'];
                 $_SESSION['userRole']=$user['userRole'];
                 $_SESSION['id']=$user['id'];
-                //echo " bienvenue , $uname"  ;
-                header("Location: ../views/indexAdmin.php");
+                if($user['userRole']==2)
+                {
+                header("Location: ../views/indexAdmin.php");                
+                }
+                else header("Location: ../views/indexEditeurs.php");
                 exit;
             }
                 mysqli_close($connexion); //fermer la connexion
