@@ -18,10 +18,41 @@ require_once("api_call.php");
         $articles = CallAPI("GET","localhost:8000/articles"); 
         return $articles[0];
     }
+<<<<<<< HEAD
      public static function paginationNext(){
         $articles = CallAPI("GET","localhost:8000/articles")[$GLOBALS['limit']];
         $GLOBALS['limit'] = $GLOBALS['limit']+1;
         return $articles;
+=======
+     public static function ArticleById($id){
+        //on recupere la connexion à la bd
+        $connexion=databaseConnexion::getDatabaseConnexion();
+        $requete='SELECT * FROM Article WHERE id='.$id;
+        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
+        $donnees =$connexion->query($requete);
+        $rows =$donnees->fetch();
+        return $rows;
+    }
+     public static function categoryArticle($categorie)
+    {
+        $connexion=databaseConnexion::getDatabaseConnexion();
+        $requete='SELECT * FROM Article where categorie='.$categorie;
+        $donnees =$connexion->query($requete);
+       //affiche en ligne (rows) et stockage du resultat dans un tableau associatif
+        $rows =$donnees->fetchAll();
+        return $rows;
+>>>>>>> 160bf2769095ce7ac8121150bdbe4a2d29966012
+    }
+  
+     public static function paginationNext(){
+        //on recupere la connexion à la bd
+        $connexion=databaseConnexion::getDatabaseConnexion();
+        //on met la requete oour récuperer tous les articles 
+        $requete='SELECT * FROM Article ORDER BY id ';
+        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
+        $donnees =$connexion->query($requete);
+        $rows =$donnees->fetchAll();
+        return $rows;
     }
     public static function paginationPrevious(){
         //on recupere la connexion à la bd
@@ -33,25 +64,8 @@ require_once("api_call.php");
         $rows =$donnees->fetchAll();
         return $rows;
     }
-    public static function getArticleById($id){
-        //on recupere la connexion à la bd
-        $connexion=databaseConnexion::getDatabaseConnexion();
-        $requete='SELECT * FROM Article WHERE id='.$id;
-        //affiche en ligne (rows) et pour le la fonction query c'est pour executer la requete
-        $donnees =$connexion->query($requete);
-        $rows =$donnees->fetchAll();
-        return $rows;
-    }
-     function categoryArticle($categorie)
-    {
-        $connexion=getDatabaseConnexion();
-        $requete="SELECT * FROM Article where categorie='$categorie'";
-        $donnees =$connexion->query($requete);
-       //affiche en ligne (rows) et stockage du resultat dans un tableau associatif
-        $rows =$donnees->fetchAll();
-        return $rows;
-    }
-  
+   
+    
 
     function createArticle($titre, $contenu, $dateCreation, $dateModification, $categorie)
     { //si on met des donnes erronnees
@@ -64,16 +78,6 @@ require_once("api_call.php");
        catch(Exception $e){
         die('Erreur $:' .$e->getMessage());
        }
-    }
-     function readArticle($id){
-        $connexion=getDatabaseConnexion();
-        //on met la requete oour récuperer l'article choisit
-        $requete="SELECT * FROM Article where id==' .$id '";
-        $donnees =$connexion->query($requete);
-       //affiche en ligne (rows) et stockage du resultat dans un tableau associatif
-        $rows =$donnees->fetchAll();
-        return $rows;
-        //if (!empty ($rows)){return $rows[0];}else {die ('article introuvable');}
     }
       function updateArticle($id, $titre, $contenu, $dateCreation, $dateModification, $categorie){
         //on use id car il faut savoir quelle article mettre a jour

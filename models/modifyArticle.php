@@ -1,6 +1,6 @@
-<?php
+<?
 session_start();
-    if(isset($_POST['valider'])){      
+if(isset($_POST['modifier'])){      
         if((empty($_POST['titre'])) or (empty($_POST['contenu'])) or (empty($_POST['categorie']))){
             echo 'veuillez remplir tous les champs ';
         }
@@ -11,7 +11,7 @@ session_start();
             $contenu= $_POST['contenu'];
             $editeur= $_SESSION['id']; 
             $categorie = intval($_POST['categorie']);
-            $requete ="INSERT INTO Article (titre, contenu, categorie, editeur) VALUES ('{$titre}','{$contenu}',{$categorie},'{$editeur}')";
+            $requete ="UPDATE Article SET titre= '{$titre}', contenu= '{$contenu}',categorie={$categorie} ,editeur= '{$editeur}' where id='{$id}'";
             if (mysqli_query($connexion, $requete)) {
                 header("Location: ../views/indexAdmin.php?action=gererarticles");
                 
@@ -20,7 +20,6 @@ session_start();
             }       
         }         
     }else{
-        echo "didnt go in the if statement";
+        echo "didnt go in the if modif statement";
     }
-?>
-    
+    ?>

@@ -38,19 +38,19 @@
                             </a>
                         </li>
                         <li class="sub">
-                            <a  href="gererArticles.php">
+                            <a   href="indexAdmin.php?action=gererarticles">
                             <i class="fa fa-dashboard"></i>
                             <span>Gestion Articles</span>                                
                             </a>
                         </li>
                         <li class="sub">
-                            <a  href="gererCategories.php">
+                            <a  href="indexAdmin.php?action=gerercategories">
                             <i class="fa fa-dashboard"></i>
                             <span>Gestion Categories</span>                                
                             </a>
                         </li>
                         <li class="sub">
-                            <a  href="gererUsers.php">
+                            <a  href="indexAdmin.php?action=gererusers">
                             <i class="fa fa-user"></i>
                             <span>Gestion Utilisateurs</span>                                
                             </a>
@@ -59,6 +59,7 @@
                     <!-- sidebar menu end-->
                 </div>
             </aside>
+            
                      <section id="main-content">
                 <section class="wrapper">
                     <div class="text-center"> 
@@ -67,29 +68,33 @@
                     <div class="row">
                         <div class="col-lg-9 main-chart">  
                             <?php 
-                                $articles = Article::getAllArticle();
-                                foreach ($articles as $article)
+                                if(!empty($articles))
                                 {
-                                    //LE $PHP AVEC ECHO PEUT ETRE REMPLACER PAR <?=
-                                ?>                                
-                                    <h2> <a href="index.php?action=articles&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
+                                    foreach ($articles as $article)
+                                    {
+                            ?>                                
+                                    <h2> <a href="indexAdmin.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
                                     <p> <?= $article['contenu'];
-                                } 
-                                ?> 
+                                    }                                
+                                }
+                            ?> 
+                            <div class="pagination">
+                            <a href="indexAdmin.php?action=pagination"> <button type="button"> Suivant </button></a>        
                         </div>
+                        </div>
+                        
                         <div class="col-lg-3 ds">
                             <div class="donut-main">
                             <h2>Catégories</h2>
                             <ul>  
                             <?php 
-                            
-                                $categories = Categorie::getAllCategory();
+                            if(!empty($categories)){
                                 foreach ($categories as $categorie)
                                 {
                             ?> 
-                                <li><a href="<?= $categorie['id'] ?> " id="category"><?=$categorie['libelle'] ?> </a> </li>
+                                <li><a href="indexAdmin.php?action=categorie&id= <?= $categorie['id'] ?> " id="category"><?=$categorie['libelle'] ?> </a> </li>
                             <?php 
-                                } 
+                                } }
                             ?> 
                             </ul>     
                         </div>

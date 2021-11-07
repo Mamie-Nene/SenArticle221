@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="FR">
     <head>
-        <title>page d'accueil editeurs </title>
+        <title>page d'accueil admin </title>
         <link href="../asset/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!--external css-->
         <link href="../asset/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
                 </div>
-                <a href="indexEditeurs.php" class="logo"><b>SenArticle<span>221</span></b></a>
+                <a href="indexAdmin.php" class="logo"><b>SenArticle<span>221</span></b></a>
                     <!--logo end-->
                 <div class="top-menu">
                     <ul class="nav pull-right top-menu">
@@ -32,65 +32,64 @@
                         <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
                         <h5 class="centered">Mame Néné</h5>
                         <li class="mt">
-                            <a class="active" href="indexEditeurs.php">
+                            <a href="indexAdmin.php">
                             <i class="fa fa-dashboard"></i>
                             <span>Accueil</span>                                
                             </a>
                         </li>
                         <li class="sub">
-                            <a   href="indexEditeurs.php?action=gererarticles">
+                            <a  href="indexAdmin.php?action=gererarticles">
                             <i class="fa fa-dashboard"></i>
                             <span>Gestion Articles</span>                                
                             </a>
                         </li>
                         <li class="sub">
-                            <a  href="indexEditeurs.php?action=gerercategories">
+                            <a class="active"  href="indexAdmin.php?action=gerercategories">
                             <i class="fa fa-dashboard"></i>
                             <span>Gestion Categories</span>                                
+                            </a>
+                        </li>
+                        <li class="sub">
+                            <a  href="indexAdmin.php?action=gererusers">
+                            <i class="fa fa-user"></i>
+                            <span>Gestion Utilisateurs</span>                                
                             </a>
                         </li>
                     </ul>
                     <!-- sidebar menu end-->
                 </div>
             </aside>
-            
-                     <section id="main-content">
+            <section id="main-content">
                 <section class="wrapper">
                     <div class="text-center"> 
-                        <h2 class="text-center"> Bienvenue à SenArticle221 </h2>
+                        <h2 class="text-center"> Liste des articles </h2>
                     </div>
                     <div class="row">
-                        <div class="col-lg-9 main-chart">  
-                            <?php 
-                                if(!empty($articles))
+                        <div class="col-md-12 mt">
+                            <div class="content-panel ">
+                            <table class="table table-hover"> 
+                                <thead>
+                                    <tr>
+                                        <th id="titre"> Libellé </th>
+                                        <th id="action"> Actions </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                            if(!empty($categories))
+                            {
+                                foreach ($categories as $categorie) 
                                 {
-                                    foreach ($articles as $article)
-                                    {
-                            ?>                                
-                                    <h2> <a href="indexEditeurs.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
-                                    <p> <?= $article['contenu'];
-                                    }                                
+                        ?>      <tr>
+                                    <td> <?= $categorie['libelle'] ?> </td>
+                                    <td> <a class="btn" href="editCategorie.php?id=<?=$article['id']?>"> Modifier </a> 
+                                    <a href="deleteCategorie.php?id=<?$article['id']?>">Supprimer </a> </td>
+                                </tr>
+                            <?php
                                 }
-                            ?> 
-                            <div class="pagination">
-                            <a href="indexEditeurs.php?action=pagination"> <button type="button"> Suivant </button></a>        
-                        </div>
-                        </div>
-                        
-                        <div class="col-lg-3 ds">
-                            <div class="donut-main">
-                            <h2>Catégories</h2>
-                            <ul>  
-                            <?php 
-                            if(!empty($categories)){
-                                foreach ($categories as $categorie)
-                                {
-                            ?> 
-                                <li><a href="indexEditeurs.php?action=categorie&id= <?= $categorie['id'] ?> " id="category"><?=$categorie['libelle'] ?> </a> </li>
-                            <?php 
-                                } }
-                            ?> 
-                            </ul>     
+                            } ?>
+                            </table>
+                             <a href="addCategorie.php"> Ajouter une catégorie </a> 
                         </div>
                     </div>
                 </section>
