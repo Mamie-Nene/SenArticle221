@@ -1,4 +1,4 @@
-
+<?session_start()?>
 <!DOCTYPE HTML>
 <html lang=fr>
     <head>
@@ -13,8 +13,8 @@
                 <input type="text" name="nom" id="nom"/> </br>
             </div>
             <div class="input-group">
-                <label for="uname"> Nom d'utilisateur </label> 
-                <input type="text" name="uname" id="uname"/> </br>
+                <label for="username"> Nom d'utilisateur </label> 
+                <input type="text" name="username" id="username"/> </br>
             </div>
             <div class="input-group">
                 <label for="motDePasse"> Mot de Passe de l'utilisateur </label> 
@@ -25,12 +25,8 @@
                 <input type="email" name="mail" id="mail"> </br>
             </div>
             <div class="input-group">
-                <label for="groupe"> Groupe </label>
-                <input type="number" name="groupe" id="egroup">
-            </div>
-            <div class="input-group">
-                <button class="btn" type="submit" value="valider">Valider </button>
-                <a href="indexAdmin.php"> <button class="btn" type="button"> Annuler </button> </a>
+                <button class="btn" type="submit" name="valider">Valider </button>
+                <a href="../views/indexAdmin.php?action=gererusers"> <button class="btn" type="button"> Annuler </button> </a>
             </div>
         </form>
     </body>
