@@ -28,7 +28,7 @@
                 }
                 else
                 {
-                    echo 'probleme bd';
+                    echo 'probleme integration dans la base ';
                 }            
             }            
         }
