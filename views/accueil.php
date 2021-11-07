@@ -1,5 +1,4 @@
-<?session_start()
-?>
+<?session_start()?>
 <!DOCTYPE html>
 <html lang="FR">
     <head>
@@ -19,68 +18,53 @@
                 <!--logo end-->
                 <div class="top-menu">
                     <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="views/connexion.php"> Connexion </a> </li>
-                    <li><a class="logout" href="views/inscription.php"> Inscription</a></li>
+                    <li><a class="log" href="views/connexion.php"> Connexion </a> </li>
+                    <li><a class="log1" href="views/inscription.php"> Inscription</a></li>
                     </ul>
                 </div>
             </header>
             <!-- fin header -->
             <!-- debut conteneur -->
-            <section id="main-content">
+            <section id="main-content1">
                 <section class="wrapper">
-                    <div class="text-center"> 
-                        <h2 > Bienvenue à SenArticle221 </h2>
-                    </div>
+                    <h2 class="text-center"> Bienvenue à SenArticle221 </h2>
                     <div class="row">
-                        <div class="col-lg-9 main-chart">        
+                        <div class="col-lg-9 "> 
                         <?php 
-                        
                         if(!empty($articles))
                         {
                             foreach ($articles as $article)
-                            {
-                                    //LE $PHP AVEC ECHO PEUT ETRE REMPLACER PAR <?=
-                            ?>                                
-                                <h2> <a href="index.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
-                                <p> <?= $article['contenu'];
+                            {   ?>                                
+                                <h2> <a class="lien" href="index.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
+                                <p class="lien" > <?= substr($article['contenu'], 0, 300) . '...';
                             } 
-                        }
-                        ?> 
+                        }   ?> 
                         <div class="pagination">
-                            <a href="index.php?action=pagination"> <button type="button"> Suivant </button></a>        
+                            <a class="lien" href="index.php?action=pagination"> <button type="button"> Suivant </button></a>        
                         </div>
+                        </div>
+                        <div class= "ds">
                             
-                        </div>
-                       
-                        <div class="col-lg-3 ds">
-                            <div class="donut-main">
-                                <h2>Catégories</h2>
-                                <ul>  
+                            <h2>Catégories</h2>
+                            <ul>  
                                 <?php 
-                                    
-                                   // $categories = Categorie::getAllCategory();
-                                    if (!empty($categories)){
-                                        foreach ($categories as $categorie)
-                                    {
-                                ?> 
-                                <li><a href="index.php?action=categorie&id=<?= $categorie['id'] ?> " id="category"><?=$categorie['libelle'] ?> </a> </li>
-                                <?php 
-                                } }
-                                ?> 
-                                </ul>  
-                            </div>    
+                                if (!empty($categories))
+                                {
+                                    foreach ($categories as $categorie)
+                                    {?> 
+                                        <li> <a href="index.php?action=categorie&id=<?= $categorie['id'] ?> " id="category"> <?=$categorie['libelle'] ?> </a> </li>
+                                    <?php 
+                                    } 
+                                }?> 
+                            </ul>  
+                            
                         </div>
                     </div>
                 </section>
             </section>
             <!-- fin conteneur-->
         </section>
-        <script src="asset/lib/jquery/jquery.min.js"></script>
-        <script src="asset/lib/bootstrap/js/bootstrap.min.js"></script>
-        <script class="include" type="text/javascript" src="asset/lib/jquery.dcjqaccordion.2.7.js"></script>
-        <script src="asset/lib/jquery.scrollTo.min.js"></script>
-        <!--common script for all pages-->
-        <script src="asset/lib/common-scripts.js"></script>
+    
     </body>
 </html>
     
