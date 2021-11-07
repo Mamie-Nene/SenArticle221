@@ -8,7 +8,7 @@
         }
         public function showAccueil()
         {
-            $articles = Article::getAllArticle();
+            $articles = Article::getLimitArticle();
             $categories= Categorie::getAllCategory();
         require_once '../views/accueilEditeur.php';
         }
