@@ -30,7 +30,7 @@
                 <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
                         <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-                        <h5 class="centered">Mame Néné</h5>
+                        <h4 class="centered">Mame Néné</h4>
                         <li class="mt">
                             <a class="active" href="indexAdmin.php">
                             <i class="fa fa-dashboard"></i>
@@ -60,31 +60,31 @@
                 </div>
             </aside>
             
-                     <section id="main-content">
+            <section id="main-content">
                 <section class="wrapper">
                     <div class="text-center"> 
                         <h2 class="text-center"> Bienvenue à SenArticle221 </h2>
                     </div>
                     <div class="row">
-                        <div class="col-lg-9 main-chart">  
+                        <div class="col-lg-9 ">  
                             <?php 
                                 if(!empty($articles))
                                 {
                                     foreach ($articles as $article)
                                     {
                             ?>                                
-                                    <h2> <a href="indexAdmin.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
-                                    <p> <?= $article['contenu'];
+                                    <h2> <a class="lien" href="indexAdmin.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
+                                    <p class="lien"> <?= substr($article['contenu'], 0, 300) . '...';
                                     }                                
                                 }
                             ?> 
                             <div class="pagination">
-                            <a href="indexAdmin.php?action=pagination"> <button type="button"> Suivant </button></a>        
+                            <a class="lien" href="indexAdmin.php?action=pagination"> <button type="button"> Suivant </button></a>        
                         </div>
                         </div>
                         
                         <div class="col-lg-3 ds">
-                            <div class="donut-main">
+                            
                             <h2>Catégories</h2>
                             <ul>  
                             <?php 
@@ -97,7 +97,7 @@
                                 } }
                             ?> 
                             </ul>     
-                        </div>
+                        
                     </div>
                 </section>
             </section>
