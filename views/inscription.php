@@ -1,5 +1,6 @@
+<?session_start()?>
 <!Doctype html>
-<html>
+<html lang=FR>
     <head>
         <title> Formulaire d'inscription</title>
         <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,31 +18,31 @@
                                 <h2 class="form-login-heading"> Formulaire d'inscription </h2>
                                 <div class="form-group">
                                     <label class="control-label col-lg-2" for="nom"> Nom </label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-5">
                                         <input class="form-control" type="text" id="nom" name="nom" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-lg-2" for="username"> Nom d'utilisateur</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-5">
                                         <input class="form-control" type="text" id=" username" name="username" /> 
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-lg-2" for="motDePasse"> Mot de passe</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-5">
                                         <input class="form-control" type="password" id="motDePasse" name="motDePasse" /> 
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-lg-2" for="confmdp"> Confirmation du mot de passe</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-5">
                                         <input class="form-control" type="password" id=" confmdp" name="confmdp"  />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-lg-2" for="mail"> Email</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-5">
                                         <input class="form-control" type="text" id=" mail" name="mail" />  
                                     </div>
                                 </div>
