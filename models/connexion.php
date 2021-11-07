@@ -34,8 +34,10 @@
             else
             {
                 //on ouvre la session
-                $_SESSION['username']=$uname;
-                $_SESSION['goupe']=mysqli_fetch_array($requete)['groupe'];
+                $user= mysqli_fetch_array($requete);
+                $_SESSION['username']=$user['username'];
+                $_SESSION['userRole']=$user['userRole'];
+                $_SESSION['id']=$user['id'];
                 //echo " bienvenue , $uname"  ;
                 header("Location: ../views/indexAdmin.php");
                 exit;
