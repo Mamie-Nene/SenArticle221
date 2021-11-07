@@ -16,20 +16,12 @@
                 <textarea name="contenu" id="contenu">  </textarea> 
             </div>
             <div class="input-group">
-                <label for="dateCreation"> date de creation </label> 
-                <input type="date" name="dateCreation" id="dateCreation"> 
-            </div>
-            <div class="input-group">
-                <label for="dateModif"> date de modification </label> 
-                <input type="date" name="dateModif" id="dateModif"> 
-            </div>
-            <div class="input-group">
                 <label for="categorie"> catégorie </label>
                 <input type="number" name="categorie" id="categorie">
            </div>
             <div class="input-group">
-                <button button class="btn" type="submit" value="valider">VALIDER </button>
-                <a href="indexAdmin.php"> <button class="btn" type="button"> Annuler </button> </a>
+                <button button class="btn" type="submit" name="valider">VALIDER </button>
+                <a href="../views/indexAdmin.php?action=gererarticles"> <button class="btn" type="button"> Annuler </button> </a>
             </div>
         </form>
     </body>
