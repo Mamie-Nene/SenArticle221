@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="FR">
     <head>
-        <title>page d'accueil admin </title>
-        <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <title>page d'accueil editeurs </title>
+        <link href="../asset/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!--external css-->
-        <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="../asset/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
         <!-- Custom styles for this template -->
-        <link href="../css/style.css" rel="stylesheet">
-        <link href="../css/style-responsive.css" rel="stylesheet">
+        <link href="../asset/css/style.css" rel="stylesheet">
+        <link href="../asset/css/style-responsive.css" rel="stylesheet">
      
     </head>
     <body>
@@ -17,11 +17,11 @@
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
                 </div>
-                <a href="indexAdmin.php" class="logo"><b>SenArticle<span>221</span></b></a>
+                <a href="indexEditeurs.php" class="logo"><b>SenArticle<span>221</span></b></a>
                     <!--logo end-->
                 <div class="top-menu">
                     <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../models/logout.php"> Deconnexion </a> </li>
+                    <li><a class="logout" href="../models/logout.php"> Déconnexion </a> </li>
                     </ul>
                     </div>
             </header>
@@ -32,37 +32,28 @@
                         <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
                         <h5 class="centered">Mame Néné</h5>
                         <li class="mt">
-                            <a class="active" href="indexAdmin.php">
+                            <a class="active" href="indexEditeurs.php">
                             <i class="fa fa-dashboard"></i>
                             <span>Accueil</span>                                
                             </a>
                         </li>
-                        <li class="sub-menu">
-                            <a href="javascript:;">
-                            <i class="fa fa-desktop"></i>
-                            <span>Gestion Articles</span>
+                        <li class="sub">
+                            <a   href="indexEditeurs.php?action=gererarticles">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Gestion Articles</span>                                
                             </a>
-                            <ul class="sub">
-                                <li><a href="addArticle.php">Ajouter Article</a></li>
-                                <li><a href="editArticle.php">Modifier Article</a></li>
-                                <li><a href="deleteArticle.php">Supprimer Article</a></li>
-                            </ul>
                         </li>
-                        <li class="sub-menu">
-                            <a href="javascript:;">
-                            <i class="fa fa-desktop"></i>
-                            <span>Gestion Catégories</span>
+                        <li class="sub">
+                            <a  href="indexEditeurs.php?action=gerercategories">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Gestion Categories</span>                                
                             </a>
-                            <ul class="sub">
-                                <li><a href="addCategorie.php">Ajouter Catégorie</a></li>
-                                <li><a href="editCategorie.php">Modifier Catégorie</a></li>
-                                <li><a href="deleteCategorie.php">Supprimer Catégorie</a></li>
-                            </ul>
                         </li>
                     </ul>
                     <!-- sidebar menu end-->
                 </div>
             </aside>
+            
                      <section id="main-content">
                 <section class="wrapper">
                     <div class="text-center"> 
@@ -71,29 +62,33 @@
                     <div class="row">
                         <div class="col-lg-9 main-chart">  
                             <?php 
-                                $articles = Article::getAllArticle();
-                                foreach ($articles as $article)
+                                if(!empty($articles))
                                 {
-                                    //LE $PHP AVEC ECHO PEUT ETRE REMPLACER PAR <?=
-                                ?>                                
-                                    <h2> <a href="index.php?action=articles&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
+                                    foreach ($articles as $article)
+                                    {
+                            ?>                                
+                                    <h2> <a href="indexEditeurs.php?action=article&id= <?= $article['id'] ?> " > <?= $article['titre'] ?> </a> </h2>
                                     <p> <?= $article['contenu'];
-                                } 
-                                ?> 
+                                    }                                
+                                }
+                            ?> 
+                            <div class="pagination">
+                            <a href="indexEditeurs.php?action=pagination"> <button type="button"> Suivant </button></a>        
                         </div>
+                        </div>
+                        
                         <div class="col-lg-3 ds">
                             <div class="donut-main">
                             <h2>Catégories</h2>
                             <ul>  
                             <?php 
-                            
-                                $categories = Categorie::getAllCategory();
+                            if(!empty($categories)){
                                 foreach ($categories as $categorie)
                                 {
                             ?> 
-                                <li><a href="<?= $categorie['id'] ?> " id="category"><?=$categorie['libelle'] ?> </a> </li>
+                                <li><a href="indexEditeurs.php?action=categorie&id= <?= $categorie['id'] ?> " id="category"><?=$categorie['libelle'] ?> </a> </li>
                             <?php 
-                                } 
+                                } }
                             ?> 
                             </ul>     
                         </div>
@@ -102,11 +97,11 @@
             </section>
                             <!--fin conteneur-->
         </section>
-        <script src="../lib/jquery/jquery.min.js"></script>
-        <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-        <script class="include" type="text/javascript" src="../lib/jquery.dcjqaccordion.2.7.js"></script>
-        <script src="../lib/jquery.scrollTo.min.js"></script>
+        <script src="../asset/lib/jquery/jquery.min.js"></script>
+        <script src="../asset/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="../asset/lib/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="../asset/lib/jquery.scrollTo.min.js"></script>
         <!--common script for all pages-->
-        <script src="../lib/common-scripts.js"></script>
+        <script src="../asset/lib/common-scripts.js"></script>
     </body>
 </html>
